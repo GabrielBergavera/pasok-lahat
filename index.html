@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PASOK LAHAT! | Different identities. Equal rights. No one left out.</title>
+<meta name="description" content="An interactive gender equality and social awareness campaign. Different identities. Equal rights. No one left out.">
+<style>
+:root{--or:#ff6a1a;--pu:#5b2bd1;--ye:#ffd21f;--pk:#ff4fa3;--bl:#2d7ff9;--cream:#fff4e0;--ink:#1b1233;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Trebuchet MS","Gill Sans","Segoe UI",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:1.05rem;overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.hd{font-family:"Arial Black","Helvetica Neue",Arial,sans-serif;font-weight:900;letter-spacing:-.04em;line-height:.9;text-transform:uppercase}
+.wrap{max-width:1160px;margin:auto;padding:0 22px}
+.sec{position:relative;padding:120px 0 100px}
+.zz::before{content:"";position:absolute;left:0;right:0;top:-39px;height:40px;background:inherit;-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/40px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/40px 100%}
+.st{display:inline-block;background:var(--ye);color:var(--ink);padding:5px 14px;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-weight:900;text-transform:uppercase;letter-spacing:.5px;font-size:.82rem;transform:rotate(-3deg)}
+.st.pk{background:var(--pk)}.st.bl{background:var(--bl);color:#fff}.st.or{background:var(--or)}.st.pu{background:var(--pu);color:#fff}.st.w{background:#fff}
+.h2{font-size:clamp(2.6rem,8.4vw,6.6rem);margin:16px 0 18px}
+.h2 i{font-style:italic;color:var(--or)}
+.sub{max-width:660px;font-size:1.2rem;margin-bottom:38px}
+.btn{display:inline-block;font-weight:900;text-transform:uppercase;letter-spacing:1px;padding:16px 30px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);text-decoration:none;transition:.2s;border-radius:999px;background:var(--ye);color:var(--ink)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.pk{background:var(--pk)}.btn.w{background:#fff}.btn.pu{background:var(--pu);color:#fff}
+.btn[disabled]{opacity:.4;pointer-events:none}
+/* NAV */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;background:var(--ink);border-radius:999px;padding:6px 8px 6px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 0 rgba(27,18,51,.18);max-width:calc(100% - 24px)}
+.lg{color:var(--ye);font-family:"Arial Black",Arial,sans-serif;font-weight:900;text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
+.lg b{color:var(--pk)}
+.nav ul{display:flex;gap:2px;list-style:none}
+.nav ul a{display:block;color:#fff;text-decoration:none;font-weight:900;font-size:.76rem;letter-spacing:.8px;text-transform:uppercase;padding:9px 13px;border-radius:999px;transition:.2s;white-space:nowrap}
+.nav ul a:hover{background:rgba(255,255,255,.18)}
+.nav ul a.on{background:var(--ye);color:var(--ink)}
+.mb{display:none;color:#fff;font-weight:900;letter-spacing:1px;background:var(--pk);padding:8px 16px;border-radius:999px;font-size:.8rem}
+/* HERO */
+.hero{min-height:100vh;padding:130px 0 70px;position:relative;overflow:hidden;background:var(--cream)}
+.blob{position:absolute;border-radius:50%;z-index:0}
+.bl1{width:420px;height:420px;background:var(--pu);right:-120px;top:-100px}
+.bl2{width:260px;height:260px;background:var(--ye);left:-90px;bottom:120px}
+.bl3{width:130px;height:130px;background:var(--pk);right:14%;bottom:40%;animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-24px) rotate(20deg)}}
+.hero .wrap{position:relative;z-index:2}
+.word{font-size:clamp(4.4rem,17vw,13rem);display:flex;flex-wrap:wrap;gap:0 .12em;margin:14px 0 6px}
+.word span:nth-child(1){color:var(--pu)}
+.word span:nth-child(2){color:var(--or);-webkit-text-stroke:0;display:inline-block;transform:rotate(-2.5deg)}
+.word em{font-style:normal;display:inline-block;background:var(--ye);border:5px solid var(--ink);padding:0 .08em;transform:rotate(3deg);margin-left:.05em;box-shadow:8px 8px 0 var(--ink);font-size:.55em;vertical-align:middle;color:var(--ink)}
+.tag{font-size:clamp(1.15rem,2.6vw,1.7rem);font-weight:900;margin-bottom:20px}
+.tag mark{background:var(--pk);color:#fff;padding:0 8px}
+.sup{max-width:640px;font-size:1.15rem;margin-bottom:26px}
+.intro{max-width:700px;background:#fff;border:3px solid var(--ink);padding:18px 22px;box-shadow:8px 8px 0 var(--pu);font-size:.98rem;margin-bottom:32px;transform:rotate(-.6deg)}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.bench{margin-top:56px}
+.bt{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.bt p{font-weight:900}
+.seat{display:flex;flex-wrap:wrap;align-items:flex-end;min-height:150px;padding:0 10px;border-bottom:10px solid var(--ink)}
+.seat svg{width:62px;height:100px;margin:0 -6px;flex:none;animation:pop .5s cubic-bezier(.2,1.6,.4,1) both,bob 3.2s ease-in-out infinite;transform-origin:bottom}
+.seat svg:hover{animation:jump .5s}
+@keyframes pop{from{transform:scale(0) translateY(40px)}}
+@keyframes bob{50%{transform:translateY(-6px) rotate(1.5deg)}}
+@keyframes jump{40%{transform:translateY(-26px) scale(1.08)}}
+.mq{background:var(--ink);color:var(--ye);overflow:hidden;white-space:nowrap;padding:14px 0;border-block:4px solid var(--ink)}
+.mq div{display:inline-block;animation:mq 34s linear infinite;font-weight:900;font-size:1.3rem;text-transform:uppercase;letter-spacing:1px}
+.mq span{margin:0 26px}.mq b{color:var(--pk)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* GENDER 101 */
+.g101{background:var(--pu);color:#fff}
+.g101 .h2 i{color:var(--ye)}
+.xp{display:grid;grid-template-columns:300px 1fr;gap:30px;align-items:start}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{background:#fff;color:var(--ink);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px 12px;text-align:left;font-weight:900;font-size:.82rem;line-height:1.15;transition:.2s}
+.chip:hover{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:6px 6px 0 var(--ink)}
+.chip small{display:block;color:var(--pu);font-size:.72rem}
+.chip.on{background:var(--ye)}
+.page{background:var(--cream);color:var(--ink);border:4px solid var(--ink);box-shadow:12px 12px 0 var(--pk);padding:34px;position:relative;min-height:520px}
+.page .no{position:absolute;right:20px;top:-4px;font-size:7rem;color:var(--pu);opacity:.15;font-family:"Arial Black",Arial;font-weight:900;line-height:1}
+.page h3{font-size:clamp(2rem,4.5vw,3.4rem);margin-bottom:16px;color:var(--pu)}
+.blk{margin-bottom:16px}
+.blk b{display:inline-block;font-weight:900;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;background:var(--ink);color:#fff;padding:2px 10px;margin-bottom:5px}
+.take{background:var(--ye);border:3px solid var(--ink);padding:12px 16px;font-weight:900;transform:rotate(-1deg);margin-top:8px}
+.pn{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.pn .btn{padding:10px 20px;box-shadow:4px 4px 0 var(--ink);font-size:.85rem}
+.anim{animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* VOICES */
+.vl{display:grid;gap:14px}
+.vs{border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);width:min(100%,900px);transition:.3s;overflow:hidden}
+.vs:nth-child(even){margin-left:auto}
+.vs:nth-child(1){background:var(--pk)}.vs:nth-child(2){background:var(--ye)}.vs:nth-child(3){background:var(--bl);color:#fff}.vs:nth-child(4){background:var(--or)}.vs:nth-child(5){background:#fff}.vs:nth-child(6){background:var(--pu);color:#fff}
+.vs:hover{transform:translate(-4px,-4px) rotate(-.4deg)}
+.vb{width:100%;display:grid;grid-template-columns:64px 1fr 44px;gap:14px;align-items:center;text-align:left;padding:18px 22px}
+.vb .n{font-family:"Arial Black",Arial;font-weight:900;font-size:2.6rem;line-height:1;-webkit-text-stroke:2px currentColor;color:transparent}
+.vb .t{font-family:"Arial Black",Arial;font-weight:900;text-transform:uppercase;font-size:clamp(1.1rem,3vw,1.9rem);letter-spacing:-.02em;line-height:1}
+.vb .t small{display:block;font-family:"Trebuchet MS",sans-serif;font-weight:700;text-transform:none;font-size:.95rem;letter-spacing:0;margin-top:4px}
+.vb .pm{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:1.6rem;font-weight:900;transition:transform .35s}
+.vs.open .pm{transform:rotate(135deg)}
+.vx{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.vs.open .vx{grid-template-rows:1fr}
+.vx>div{overflow:hidden}
+.vi{padding:4px 22px 24px 100px}
+.vi p{margin-bottom:12px;max-width:620px}
+.vq{font-family:"Arial Black",Arial;font-weight:900;text-transform:uppercase;font-size:clamp(1.3rem,3vw,2rem);line-height:1;margin:10px 0}
+.vn{background:rgba(255,255,255,.85);color:var(--ink);border:2px dashed var(--ink);padding:9px 14px;font-size:.9rem;max-width:620px}
+.vs:nth-child(5) .vn{background:var(--cream)}
+/* KNOW BETTER */
+.kb{background:var(--bl);color:#fff}
+.kb .h2 i{color:var(--ye)}
+.ch{margin-top:76px}
+.ch>h3{font-size:clamp(1.9rem,5vw,3.6rem);margin:12px 0 18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.paper{background:var(--cream);color:var(--ink);border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:24px}
+.paper h4{font-family:"Arial Black",Arial;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:8px;font-size:1.15rem}
+.paper ul{margin-left:20px}
+.paper li{margin-bottom:5px}
+.paper.red{background:#ffe1e1}.paper.grn{background:#dff7e3}
+.bub{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.bb{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:22px 22px 22px 4px;padding:12px 18px;max-width:560px;box-shadow:4px 4px 0 var(--ink);font-weight:700}
+.bb:nth-child(even){align-self:flex-end;border-radius:22px 22px 4px 22px;background:var(--ye)}
+.bb small{display:block;font-weight:400;color:#555}
+.lt{display:flex;gap:0;margin:22px 0 26px;overflow-x:auto;padding-bottom:6px;position:relative}
+.lt::before{content:"";position:absolute;left:0;right:0;top:22px;height:5px;background:var(--ink)}
+.lt button{flex:1;min-width:116px;text-align:left;position:relative;padding-top:42px;font-weight:900;color:#fff;font-size:1.3rem}
+.lt button::before{content:"";position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;background:#fff;border:5px solid var(--ink);transition:.3s}
+.lt button span{display:block;font-size:.8rem;opacity:.9}
+.lt button.on::before{background:var(--ye);transform:scale(1.4)}
+.lt button.on{color:var(--ye)}
+.case{display:grid;grid-template-columns:.8fr 1.2fr;border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);background:var(--cream);color:var(--ink)}
+.cl{background:var(--or);padding:28px;border-right:4px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between;gap:20px;position:relative;overflow:hidden}
+.cl .ra{font-family:"Arial Black",Arial;font-weight:900;font-size:clamp(4.5rem,11vw,8rem);line-height:.82;letter-spacing:-.05em;color:#fff;-webkit-text-stroke:3px var(--ink);transform:rotate(-4deg)}
+.cl .why{background:#fff;border:3px solid var(--ink);padding:12px 14px;font-weight:700;font-size:.95rem;transform:rotate(1.5deg)}
+.cl .why b{display:block;font-family:"Arial Black",Arial;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--pu)}
+.cr{padding:28px}
+.cr h4{font-family:"Arial Black",Arial;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1;margin:10px 0 6px}
+.cr .off{font-size:.82rem;color:#555;margin-bottom:10px}
+.cr h5{display:inline-block;background:var(--ink);color:#fff;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:2px 10px;margin:12px 0 4px}
+.cr ul{margin-left:20px}
+.cr .lim{margin-top:14px;border:2px dashed var(--ink);padding:9px 13px;font-size:.9rem;background:#fff}
+.cr a{display:inline-block;margin-top:14px;font-weight:900;text-decoration:none;border-bottom:4px solid var(--pk)}
+.glob{margin-top:22px;max-width:780px;background:var(--ye);color:var(--ink);border:3px solid var(--ink);padding:12px 16px;font-weight:700}
+.agen{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px}
+.ag{display:block;text-decoration:none;background:#fff;color:var(--ink);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:14px 16px;transition:.2s}
+.ag:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--pk)}
+.ag b{display:block;font-family:"Arial Black",Arial;text-transform:uppercase;font-size:1rem;letter-spacing:-.01em}
+.ag span{font-size:.9rem}
+.ag em{display:block;font-style:normal;font-weight:900;font-size:.78rem;color:var(--pu);margin-top:4px}
+.slide{margin-top:20px;background:var(--cream);color:var(--ink);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.sh{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--ink);color:#fff;padding:10px 20px;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-size:.85rem}
+.sh span:last-child{color:var(--ye)}
+.sb{padding:30px 26px}
+.sq{font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:700;line-height:1.35;margin-bottom:22px}
+.so{display:grid;gap:12px}
+.op{border:3px solid var(--ink);background:#fff;padding:14px 18px;text-align:left;font-weight:700;transition:.2s;box-shadow:4px 4px 0 var(--ink)}
+.op:hover:not(:disabled){transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--pk)}
+.op.ok{background:#2fb35a;color:#fff}.op.no{background:#e0334c;color:#fff}
+.op:disabled{cursor:default}
+.ex{margin-top:20px;padding:16px 18px;border:3px solid var(--ink);background:#fff;transform:rotate(-.4deg)}
+.ex b{font-family:"Arial Black",Arial;text-transform:uppercase;font-size:1.1rem;display:block;margin-bottom:3px}
+.ex.g b{color:#1a8a42}.ex.r b{color:#d0243d}
+.nx{margin-top:18px}
+.res .big{font-family:"Arial Black",Arial;font-weight:900;font-size:5rem;line-height:1;color:var(--pu)}
+/* CHANGE */
+.chg{background:var(--or);color:var(--ink)}
+.chg .h2 i{color:#fff}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:960px;margin-bottom:30px}
+.mvb{display:flex;gap:14px;align-items:center;text-align:left;background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:14px 18px;font-weight:900;transition:.2s}
+.mvb:nth-child(odd){transform:rotate(-.5deg)}.mvb:nth-child(even){transform:rotate(.5deg)}
+.mvb:hover{transform:translate(-3px,-3px) rotate(0)}
+.mvb i{flex:none;width:32px;height:32px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;font-style:normal;color:transparent;transition:.2s}
+.mvb[aria-pressed=true]{background:var(--pk)}
+.mvb[aria-pressed=true] i{background:var(--ink);color:var(--ye)}
+.mres{display:none;margin-top:36px;background:var(--ye);border:5px solid var(--ink);box-shadow:12px 12px 0 var(--ink);padding:34px;max-width:900px;transform:rotate(-.6deg)}
+.mres.show{display:block;animation:in .6s}
+.mres h3{font-size:clamp(2.2rem,6.5vw,4.6rem);color:var(--pu);margin:10px 0}
+.mres ul{margin:12px 0 18px 20px;font-weight:700}
+.mres .pass{background:#fff;border:3px solid var(--ink);padding:12px 16px;margin-bottom:16px;font-size:.95rem}
+/* ABOUT */
+.ab{background:var(--ye)}
+.ab .intro{box-shadow:8px 8px 0 var(--pk);max-width:820px;font-size:1.1rem;margin-top:10px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin:30px 0 70px}
+.tg{background:#fff;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:0 0 18px;text-align:center;transition:.3s;overflow:hidden}
+.tg:hover{transform:translateY(-8px) rotate(-2deg)}
+.tg:nth-child(even):hover{transform:translateY(-8px) rotate(2deg)}
+.tg .top{padding:7px;font-weight:900;letter-spacing:2px;font-size:.72rem;color:#fff}
+.tg .ini{width:92px;height:92px;border-radius:50%;margin:20px auto 12px;border:4px solid var(--ink);display:grid;place-items:center;font-family:"Arial Black",Arial;font-size:2rem;font-weight:900}
+.tg .nm{font-family:"Arial Black",Arial;text-transform:uppercase;font-size:1.05rem;letter-spacing:-.02em;padding:0 12px;line-height:1.1}
+.refs{background:var(--cream);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:30px}
+.refs h3{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:6px}
+.refs p.n{font-size:.92rem;margin-bottom:12px}
+.refs ul{list-style:none;columns:2;column-gap:36px}
+.refs li{break-inside:avoid;padding:8px 0;border-bottom:2px dotted var(--ink);font-size:.95rem}
+.refs a{font-weight:900;color:var(--pu)}
+.refs small{display:block;color:#555}
+footer{background:var(--ink);color:#fff;text-align:center;padding:60px 22px 44px}
+footer .hd{font-size:clamp(2.4rem,9vw,6rem);color:var(--ye)}
+footer .hd b{color:var(--pk)}
+footer p{max-width:620px;margin:12px auto 0;color:#d8d0f2}
+footer a{display:inline-block;margin-top:22px;font-weight:900;color:var(--ye)}
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+.nav{left:12px;right:12px;transform:none;max-width:none;justify-content:space-between;border-radius:26px;flex-wrap:wrap}
+.mb{display:block}
+.nav ul{display:none;flex-direction:column;width:100%;padding:6px 0 10px}
+.nav.open ul{display:flex}
+.nav ul a{font-size:.95rem;padding:12px 14px}
+.xp{grid-template-columns:1fr}
+.chips{display:flex;overflow-x:auto;padding:4px 4px 12px}
+.chip{flex:none;width:150px}
+.two,.case,.mv{grid-template-columns:1fr}
+.cl{border-right:0;border-bottom:4px solid var(--ink)}
+.vb{grid-template-columns:44px 1fr 40px;padding:14px}
+.vb .n{font-size:1.8rem}
+.vi{padding:4px 18px 20px}
+.refs ul{columns:1}
+.sec{padding:96px 0 80px}
+.bl1{width:260px;height:260px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+
+/* =========================================================
+   RESPONSIVE UI AUDIT PATCH
+   Preserves the original PASOK LAHAT! visual identity.
+   ========================================================= */
+html{scroll-padding-top:clamp(76px,9vh,100px)}
+body{min-width:320px;overflow-x:clip}
+.wrap{width:100%;min-width:0}
+.sec,.hero{width:100%;min-width:0}
+.wrap>*{min-width:0}
+.h2,.sub,.sup,.intro,.tag,.paper,.page,.cr,.refs,.mres{min-width:0;overflow-wrap:break-word}
+.btn{max-width:100%;white-space:normal;text-align:center;line-height:1.25}
+.xp{grid-template-columns:minmax(0,300px) minmax(0,1fr)}
+.page{min-width:0;min-height:0;padding:clamp(20px,3vw,34px)}
+.page .no{font-size:clamp(4rem,8vw,7rem);right:clamp(10px,2vw,20px);pointer-events:none}
+.page h3{position:relative;z-index:1;padding-right:clamp(0px,8vw,80px);overflow-wrap:anywhere}
+.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.cl,.cr,.paper,.refs{min-width:0}
+.cl .ra{font-size:clamp(3.5rem,8vw,8rem);overflow-wrap:anywhere}
+.cr{padding:clamp(18px,3vw,28px)}
+.vb{grid-template-columns:clamp(36px,5vw,64px) minmax(0,1fr) 40px}
+.vb .t,.vb .t small{overflow-wrap:anywhere}
+.vi{min-width:0}
+.lt{max-width:100%;overscroll-behavior-x:contain;scrollbar-width:thin}
+.lt button{flex:0 0 auto;min-width:clamp(104px,13vw,140px)}
+.mv{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mvb{min-width:0;overflow-wrap:anywhere}
+.mres{width:min(100%,900px);padding:clamp(18px,4vw,34px)}
+.refs ul{column-gap:clamp(18px,3vw,36px)}
+.nav{width:max-content;max-width:calc(100% - 24px)}
+.nav ul{min-width:0}
+.nav ul a{padding-inline:clamp(8px,1vw,13px)}
+.seat{min-width:0;overflow:hidden}
+.seat svg{width:clamp(46px,6vw,62px);height:auto;aspect-ratio:60/110}
+
+/* Tablet navigation and layout */
+@media(max-width:1050px){
+  .nav{left:12px;right:12px;width:auto;transform:none;max-width:none;justify-content:space-between;border-radius:26px;flex-wrap:wrap}
+  .mb{display:block;min-height:42px}
+  .nav ul{display:none;flex-direction:column;width:100%;max-height:min(68vh,520px);overflow-y:auto;padding:6px 0 10px}
+  .nav.open ul{display:flex}
+  .nav ul a{font-size:.92rem;padding:12px 14px;white-space:normal}
+  .xp{grid-template-columns:minmax(0,1fr)}
+  .chips{display:flex;overflow-x:auto;padding:5px 5px 14px;overscroll-behavior-x:contain;scrollbar-width:thin}
+  .chip{flex:0 0 150px;min-height:62px}
+  .two,.case,.mv{grid-template-columns:minmax(0,1fr)}
+  .cl{border-right:0;border-bottom:4px solid var(--ink)}
+  .cl .ra{font-size:clamp(4rem,10vw,7rem)}
+  .vb{grid-template-columns:44px minmax(0,1fr) 40px;padding:14px}
+  .vb .n{font-size:1.8rem}
+  .vi{padding:4px 18px 20px}
+  .refs ul{columns:1}
+  .sec{padding:96px 0 80px}
+  .bl1{width:260px;height:260px}
+}
+
+@media(max-width:600px){
+  html{scroll-padding-top:78px}
+  body{font-size:1rem;line-height:1.58}
+  .wrap{padding-left:18px;padding-right:18px}
+  .hero{min-height:0;padding:112px 0 54px}
+  .word{display:block;font-size:clamp(3.25rem,14.5vw,5.5rem);line-height:.94;letter-spacing:-.055em;margin:18px 0 12px;overflow-wrap:normal}
+  .word span{display:block;max-width:100%;width:max-content;max-width:100%}
+  .word span:nth-child(2){margin-top:3px;transform:rotate(-1.5deg)}
+  .word em{border-width:3px;box-shadow:4px 4px 0 var(--ink);font-size:.48em}
+  .tag{font-size:clamp(1.05rem,4.7vw,1.3rem);line-height:1.3}
+  .sup{font-size:1rem}
+  .intro{padding:15px 16px;font-size:.94rem;margin-bottom:24px;box-shadow:5px 5px 0 var(--pu);transform:none!important}
+  .btns{gap:12px}
+  .btns .btn{flex:1 1 100%;width:100%;padding:14px 18px}
+  .bench{margin-top:38px}
+  .bt{gap:10px}
+  .bt p{flex:1 1 100%}
+  .bt .btn{padding:10px 14px!important;font-size:.82rem}
+  .seat{min-height:112px;padding:0 3px;border-bottom-width:7px}
+  .seat svg{width:clamp(38px,12vw,52px);margin:0 -4px}
+  .mq{padding:10px 0}
+  .mq div{font-size:1rem}
+  .mq span{margin:0 16px}
+  .sec{padding:82px 0 68px}
+  .h2{font-size:clamp(2.25rem,10vw,3.5rem);line-height:.98;margin:14px 0}
+  .sub{font-size:1.04rem;margin-bottom:28px}
+  .st{font-size:.72rem;padding:4px 10px;border-width:2px}
+  .chips{gap:9px}
+  .chip{flex-basis:138px;padding:10px;font-size:.78rem;min-height:60px}
+  .page{padding:20px 17px;border-width:3px;box-shadow:7px 7px 0 var(--pk)}
+  .page .no{font-size:4.4rem;right:10px;top:0}
+  .page h3{font-size:clamp(1.8rem,8vw,2.5rem);padding-right:42px;line-height:1.02}
+  .blk{margin-bottom:13px}
+  .take{font-size:.92rem;padding:10px 12px;transform:none}
+  .pn{gap:10px}
+  .pn .btn{flex:1 1 auto;padding:11px 12px;font-size:.78rem}
+  .vl{gap:12px}
+  .vs{border-width:3px;box-shadow:5px 5px 0 var(--ink)}
+  .vb{grid-template-columns:34px minmax(0,1fr) 34px;gap:8px;padding:12px 10px}
+  .vb .n{font-size:1.45rem;-webkit-text-stroke:1px currentColor}
+  .vb .t{font-size:clamp(1rem,4.5vw,1.35rem);line-height:1.08}
+  .vb .t small{font-size:.82rem;line-height:1.25}
+  .vb .pm{width:32px;height:32px;font-size:1.25rem}
+  .vi{padding:3px 14px 18px}
+  .vi p{font-size:.94rem}
+  .vq{font-size:1.25rem;line-height:1.12}
+  .vn{font-size:.82rem;padding:9px 10px}
+  .ch{margin-top:52px}
+  .ch>h3{font-size:clamp(1.75rem,7.5vw,2.6rem);line-height:1.02;margin:12px 0 16px}
+  .two{gap:14px}
+  .paper{padding:17px;border-width:3px;box-shadow:5px 5px 0 var(--ink);font-size:.94rem}
+  .paper h4{font-size:1.02rem}
+  .paper ul{padding-left:2px;margin-left:17px}
+  .bub{gap:10px}
+  .bb{max-width:94%;padding:11px 13px;font-size:.91rem}
+  .lt{margin:18px 0 22px;padding:4px 2px 10px}
+  .lt button{min-width:102px;font-size:1.08rem;padding-top:38px}
+  .lt button span{font-size:.72rem}
+  .lt::before{top:21px}
+  .lt button::before{width:23px;height:23px;border-width:4px}
+  .case{border-width:3px;box-shadow:6px 6px 0 var(--ink)}
+  .cl{padding:20px;border-bottom-width:3px;gap:18px}
+  .cl .ra{font-size:clamp(4rem,18vw,6rem)}
+  .cl .why{font-size:.9rem;transform:none}
+  .cr{padding:18px 16px}
+  .cr h4{font-size:1.3rem;line-height:1.08;overflow-wrap:anywhere}
+  .cr .off{font-size:.78rem;overflow-wrap:anywhere}
+  .cr p,.cr li{font-size:.92rem}
+  .cr h5{font-size:.68rem}
+  .cr .lim{font-size:.84rem}
+  .glob{font-size:.9rem;padding:11px 12px}
+  .agen{grid-template-columns:minmax(0,1fr);gap:12px}
+  .ag{padding:13px}
+  .slide{border-width:3px;box-shadow:6px 6px 0 var(--ink)}
+  .sh{padding:10px 13px;font-size:.72rem;letter-spacing:.6px}
+  .sb{padding:19px 15px}
+  .sq{font-size:1.12rem;margin-bottom:17px}
+  .op{padding:12px 13px;font-size:.92rem;box-shadow:3px 3px 0 var(--ink)}
+  .ex{padding:13px;font-size:.9rem;transform:none}
+  .res .big{font-size:3.8rem}
+  .mv{gap:12px}
+  .mvb{padding:12px 13px;gap:10px;font-size:.92rem;transform:none!important;box-shadow:4px 4px 0 var(--ink)}
+  .mvb i{width:28px;height:28px}
+  #mc{display:inline-block;margin:12px 0 0!important}
+  .mres{margin-top:26px;border-width:3px;box-shadow:7px 7px 0 var(--ink);transform:none}
+  .mres h3{font-size:clamp(2rem,8vw,3rem);line-height:1.02}
+  .mres .pass{overflow-wrap:anywhere;font-size:.88rem}
+  .mres .btn{width:100%;margin-top:8px}
+  .team{grid-template-columns:minmax(0,1fr);gap:16px;margin:24px 0 48px}
+  .tg{box-shadow:5px 5px 0 var(--ink)}
+  .tg:hover,.tg:nth-child(even):hover{transform:translateY(-3px)}
+  .refs{padding:19px 16px;border-width:3px;box-shadow:6px 6px 0 var(--ink)}
+  .refs h3{font-size:1.8rem;line-height:1.05}
+  .refs li{font-size:.9rem;overflow-wrap:anywhere}
+  footer{padding:44px 18px 36px}
+  footer .hd{font-size:clamp(2.25rem,10vw,3.8rem)}
+  .bl1{width:190px;height:190px;right:-105px;top:-65px}
+  .bl2{width:150px;height:150px;left:-90px;bottom:80px}
+  .bl3{width:76px;height:76px;right:8%;bottom:34%}
+}
+
+@media(max-width:360px){
+  .wrap{padding-left:15px;padding-right:15px}
+  .word{font-size:3.05rem}
+  .vb{grid-template-columns:29px minmax(0,1fr) 30px;gap:7px;padding:10px 8px}
+  .vb .t{font-size:1rem}
+  .vb .t small{font-size:.76rem}
+  .vb .pm{width:29px;height:29px}
+  .paper{padding:14px}
+  .cr{padding:15px 13px}
+  .mvb{font-size:.86rem;padding:10px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none}
+  .seat svg{animation:none!important}
+}
+
+
+/* FIX: keep the scrolling announcement bar above the next section's zigzag edge */
+.mq{position:relative;z-index:2;isolation:isolate}
+.sec.zz::before{pointer-events:none}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="lg" href="#home">PASOK<b> LAHAT!</b></a>
+  <button class="mb" id="mb" aria-expanded="false" aria-controls="nl">MENU</button>
+  <ul id="nl">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#gender101">Gender 101</a></li>
+    <li><a href="#voices">Voices &amp; Visibility</a></li>
+    <li><a href="#knowbetter">Know Better, Do Better</a></li>
+    <li><a href="#change">Be the Change</a></li>
+    <li><a href="#about">About Us</a></li>
+  </ul>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="blob bl1"></div><div class="blob bl2"></div><div class="blob bl3"></div>
+  <div class="wrap">
+    <span class="st pk">Tara, pasok!</span>
+    <h1 class="hd word"><span>PASOK</span><span>LAHAT<em>!</em></span></h1>
+    <p class="tag">Different identities. Equal rights. <mark>No one left out.</mark></p>
+    <p class="sup">There’s room for everyone. Regardless of who you are, how you identify, or how you express yourself, you deserve respect, equality, and opportunities.</p>
+    <p class="intro"><b>What does “pasok” mean?</b> In Filipino it means “come in,” and also “fit.” This campaign is about making sure everyone fits in a society that has room for all of us. Equality isn’t exclusive.</p>
+    <p class="intro" style="box-shadow:8px 8px 0 var(--or);transform:rotate(.5deg)">This is an educational advocacy project that aims to shed light on gender equality, LGBTQIA+ rights, women’s rights, and Philippine laws that uphold the rights and protection of individuals. Our group hopes to provoke thought, raise awareness, and encourage meaningful discussions about these issues that affect our everyday lives, regardless of our gender or identity. After all, a more equal world begins with how we see, respect, and treat one another.</p>
+    <div class="btns">
+      <a class="btn" href="#gender101">Explore the Campaign</a>
+      <a class="btn pk" href="#knowbetter">Know Your Rights</a>
+    </div>
+    <div class="bench">
+      <div class="bt">
+        <span class="st bl">Try it</span>
+        <p id="bsay">May upuan pa para sa’yo.</p>
+        <button class="btn w" id="addSeat" style="padding:10px 20px;box-shadow:4px 4px 0 var(--ink)">+ Pasok!</button>
+        <button class="btn" id="clrSeat" style="padding:10px 20px;box-shadow:4px 4px 0 var(--ink)">Reset</button>
+      </div>
+      <div class="seat" id="seat" aria-live="polite" aria-label="A bench with many different people making room for each other"></div>
+    </div>
+  </div>
+</section>
+<div class="mq" aria-hidden="true"><div><span>Equality isn’t exclusive.</span><b>&#10038;</b><span>Hindi dapat pili-pili ang respeto.</span><b>&#10038;</b><span>Different doesn’t mean less.</span><b>&#10038;</b><span>Everyone belongs. Everyone matters.</span><b>&#10038;</b><span>Equality isn’t exclusive.</span><b>&#10038;</b><span>Hindi dapat pili-pili ang respeto.</span><b>&#10038;</b><span>Different doesn’t mean less.</span><b>&#10038;</b><span>Everyone belongs. Everyone matters.</span><b>&#10038;</b></div></div>
+
+<!-- GENDER 101 -->
+<section class="sec g101 zz" id="gender101">
+  <div class="wrap">
+    <span class="st">Section one</span>
+    <h2 class="hd h2 rv">Gender 101:<br><i>let’s get things straight.</i></h2>
+    <p class="sub rv">Before we talk about equality, let’s understand what we’re actually talking about.</p>
+    <div class="xp rv">
+      <div class="chips" id="chips" role="tablist" aria-label="Gender 101 topics"></div>
+      <article class="page" id="page" aria-live="polite"></article>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="sec zz" id="voices" style="background:var(--cream)">
+  <div class="wrap">
+    <span class="st or">Section two</span>
+    <h2 class="hd h2 rv">Voices and visibility:<br><i>everyone deserves to be seen.</i></h2>
+    <p class="sub rv">Representation is not about giving someone special treatment. It’s about making sure nobody is treated as invisible.</p>
+    <p class="sub rv" style="font-size:.95rem;margin-top:-18px"><b>Note:</b> these six topics are <b>advocacy principles</b>. Where Philippine law is involved, we say so separately.</p>
+    <div class="vl" id="vl"></div>
+  </div>
+</section>
+
+<!-- KNOW BETTER -->
+<section class="sec kb zz" id="knowbetter">
+  <div class="wrap">
+    <span class="st">Section three</span>
+    <h2 class="hd h2 rv">Know better,<br><i>do better.</i></h2>
+    <p class="sub rv">Awareness is a start. Knowing your rights is a responsibility.</p>
+
+    <div class="ch rv" id="gbv">
+      <span class="st pk">01</span>
+      <h3 class="hd">Gender-based violence &amp; harassment</h3>
+      <div class="two">
+        <div class="paper"><h4>What it means</h4><p>Gender-based violence is harm directed at a person because of their gender or because they don’t meet gender expectations. It can be physical, sexual, emotional, or economic. It is never the victim’s fault.</p>
+        <h4 style="margin-top:14px">Forms it can take</h4><ul><li>Unwelcome sexual comments, catcalling, or jokes</li><li>Stalking or unwanted contact</li><li>Unwanted touching or sexual advances</li><li>Pressure or coercion for sexual acts</li><li>Controlling behavior, threats, or intimidation</li><li>Sexual assault and other physical violence</li></ul></div>
+        <div class="paper"><h4>How it affects people</h4><p>Survivors may feel fear, anxiety, shame, or loss of confidence. Some withdraw from school, work, or friends, and some develop health problems. Harassment also teaches others that speaking up is risky.</p>
+        <h4 style="margin-top:14px">Consent, boundaries, respect</h4><p>Consent must be freely given, clear, and specific, and it can be taken back anytime. Silence, fear, or being unable to say no is not consent. Boundaries are personal limits, and everyone gets to set theirs.</p></div>
+        <div class="paper red"><h4>&#128681; Red flags</h4><ul><li>Ignores “no” or keeps pushing</li><li>Comments on your body after you’ve asked them to stop</li><li>Uses power, grades, or a job to pressure you</li><li>Makes you feel guilty for having boundaries</li><li>Tracks or controls where you go and who you talk to</li></ul></div>
+        <div class="paper grn"><h4>&#9989; Green flags</h4><ul><li>Asks first and accepts “no” without anger</li><li>Respects privacy and personal space</li><li>Treats you the same in public and private</li><li>Welcomes different opinions and identities</li><li>Makes you feel safe, not small</li></ul></div>
+      </div>
+    </div>
+
+    <div class="ch rv" id="online">
+      <span class="st or">02</span>
+      <h3 class="hd">Online abuse</h3>
+      <div class="two">
+        <div class="paper"><h4>What it looks like</h4><ul><li><b>Online harassment:</b> repeated unwanted messages or comments</li><li><b>Cyberbullying:</b> mocking, shaming, or spreading rumors online</li><li><b>Gender-based online abuse:</b> sexist, homophobic, or transphobic attacks</li><li><b>Sharing private images without consent</b></li><li><b>Threats and intimidation:</b> messages meant to scare or control</li></ul></div>
+        <div class="paper"><h4>Responsible digital behavior</h4><ul><li>Ask before posting or sharing anyone’s photo.</li><li>Never forward private images. Stop the chain.</li><li>Call out hateful comments or report them.</li><li>Block and report abusive accounts.</li><li>Keep screenshots as evidence and tell someone you trust.</li><li>Pause before you post. Would it hurt if it were about you?</li></ul></div>
+      </div>
+      <div class="bub" aria-label="Examples of online abuse">
+        <div class="bb"><small>Group chat</small>“Look at this, she sent it to me.” (A private photo is forwarded without the person’s consent.)</div>
+        <div class="bb"><small>Comment section</small>“Girls can’t play this game, go back to the kitchen.” (Gender-based harassment, repeated under every post.)</div>
+        <div class="bb"><small>Anonymous account</small>“We know where you live. Keep quiet or else.” (A threat meant to intimidate.)</div>
+        <div class="bb"><small>Public post</small>Mocking memes about a classmate’s gender expression. (Cyberbullying that targets identity.)</div>
+      </div>
+    </div>
+
+    <div class="ch rv" id="laws">
+      <span class="st bl" style="background:#fff;color:var(--ink)">03</span>
+      <h3 class="hd">Philippine laws &amp; protection</h3>
+      <p class="sub" style="margin-bottom:6px">Pick a year to open a case file. Each law protects specific things, so we also say what it does <i>not</i> cover.</p>
+      <div class="lt" id="lt" role="tablist" aria-label="Laws by year"></div>
+      <div class="case" id="case" aria-live="polite"></div>
+      <p class="glob"><b>Scope reminder:</b> none of the laws on this page is a dedicated LGBTQIA+ anti-discrimination law. Some protect people regardless of gender, but only to the extent their text says. Laws can change, so confirm the latest provisions in the full texts.</p>
+    </div>
+
+    <div class="ch rv" id="report">
+      <span class="st pu">04</span>
+      <h3 class="hd">Reporting &amp; support</h3>
+      <div class="two">
+        <div class="paper"><h4>If it’s happening to you</h4><ul><li>Get to a safe place first.</li><li>Tell someone you trust: a friend, family member, teacher, or counselor.</li><li>Write down what happened, when, and where, if you can do so safely.</li><li>Report through official channels. You decide what feels right for you.</li></ul></div>
+        <div class="paper"><h4>If you witness it</h4><ul><li>Check on the person, privately and kindly.</li><li>Listen and believe. Don’t blame.</li><li>Offer to go with them to report, if they want.</li><li>Respect their privacy. Never share their story without consent.</li></ul></div>
+      </div>
+      <div class="paper" style="margin-top:22px"><h4>School-based support</h4><p>If you experience or witness discrimination, harassment, sexual harassment, or any situation that requires attention, report it immediately to the appropriate school authority, such as the Dean of Student Affairs Office or the Gender and Development (GAD) Center. Ask the office how reports are handled and what support is available, since procedures differ between schools.</p></div>
+      <p class="sub" style="margin:26px 0 0;font-size:1rem">Government agencies and services (visit their official sites for current contact details and reporting channels):</p>
+      <div class="agen">
+        <a class="ag" href="https://pcw.gov.ph/" target="_blank" rel="noopener"><b>Philippine Commission on Women</b><span>The national policy body on women and gender equality.</span><em>pcw.gov.ph &rarr;</em></a>
+        <a class="ag" href="https://www.dswd.gov.ph/" target="_blank" rel="noopener"><b>DSWD</b><span>Social welfare and assistance, including help for women and children in crisis.</span><em>dswd.gov.ph &rarr;</em></a>
+        <a class="ag" href="https://pnp.gov.ph/" target="_blank" rel="noopener"><b>Philippine National Police</b><span>Includes the Women and Children Protection Center.</span><em>pnp.gov.ph &rarr;</em></a>
+        <a class="ag" href="https://www.doj.gov.ph/" target="_blank" rel="noopener"><b>Department of Justice</b><span>Prosecution and legal assistance, including through the Public Attorney’s Office.</span><em>doj.gov.ph &rarr;</em></a>
+        <a class="ag" href="https://chr.gov.ph/" target="_blank" rel="noopener"><b>Commission on Human Rights</b><span>Promotes and protects human rights.</span><em>chr.gov.ph &rarr;</em></a>
+      </div>
+      <p class="glob" style="margin-top:20px">If someone is in immediate danger, get to safety and ask for help from people nearby or the proper authorities right away.</p>
+    </div>
+
+    <div class="ch rv" id="slide">
+      <span class="st">Practice round</span>
+      <h3 class="hd">Would you let that slide?</h3>
+      <p class="sub" style="margin-bottom:0">Five everyday situations. Spot the issue or pick the best response. Nothing you choose is saved or collected.</p>
+      <div class="slide" id="flow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANGE -->
+<section class="sec chg zz" id="change">
+  <div class="wrap">
+    <span class="st w">Section four</span>
+    <h2 class="hd h2 rv">Be the change.<br><i>Make a move.</i></h2>
+    <p class="sub rv">Change doesn’t happen just because we talk about it. It happens when we choose to do something about it.</p>
+    <span class="st pu">Your move.</span>
+    <p class="sub" style="margin:14px 0 22px">Tap the actions you commit to practicing, then make your move.</p>
+    <div class="mv" id="mv">
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will challenge gender stereotypes.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will respect everyone’s identity.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will speak up against discrimination.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will support equal opportunities.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will promote safe spaces.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will educate myself and others.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will support women’s empowerment.</button>
+      <button class="mvb" aria-pressed="false"><i>&#10003;</i>I will stand up against harassment.</button>
+    </div>
+    <button class="btn pu" id="go" disabled>Make my move</button>
+    <span id="mc" style="margin-left:14px;font-weight:900">0 chosen</span>
+    <div class="mres" id="mres" aria-live="polite">
+      <span class="st pk" id="tier"></span>
+      <h3 class="hd">You’re part of the change!</h3>
+      <p style="font-size:1.15rem;font-weight:700">Small actions create meaningful change. Keep making room for equality.</p>
+      <ul id="ml"></ul>
+      <div class="pass" id="mp"></div>
+      <button class="btn" id="cp" style="padding:12px 22px">Copy my move</button>
+      <button class="btn w" id="rs" style="padding:12px 22px">Start over</button>
+      <p style="margin-top:12px;font-size:.88rem">Your move stays on this page. Nothing is saved or sent anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec ab zz" id="about">
+  <div class="wrap">
+    <span class="st pk">Section five</span>
+    <h2 class="hd h2 rv">About the<br><i>campaign.</i></h2>
+    <p class="sub rv"><b>PASOK LAHAT!</b> exists to make room for everyone: women, men, and people of every gender identity, sexual orientation, and expression. It uses humor to open the door and facts to keep it open.</p>
+    <p class="intro rv">This is an educational advocacy project that aims to shed light on gender equality, LGBTQIA+ rights, women’s rights, and Philippine laws that uphold the rights and protection of individuals. Our group hopes to provoke thought, raise awareness, and encourage meaningful discussions about these issues that affect our everyday lives, regardless of our gender or identity. After all, a more equal world begins with how we see, respect, and treat one another.</p>
+    <h3 class="hd" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-top:46px">Group members</h3>
+    <div class="team rv">
+      <div class="tg"><div class="top" style="background:var(--pu)">PASOK!</div><div class="ini" style="background:var(--pk)">FA</div><div class="nm">Francheska Asigurado</div></div>
+      <div class="tg"><div class="top" style="background:var(--or)">PASOK!</div><div class="ini" style="background:var(--bl);color:#fff">GA</div><div class="nm">Giselle Ambrosio</div></div>
+      <div class="tg"><div class="top" style="background:var(--bl)">PASOK!</div><div class="ini" style="background:var(--or)">AA</div><div class="nm">Alexa Alfonso</div></div>
+      <div class="tg"><div class="top" style="background:var(--pk)">PASOK!</div><div class="ini" style="background:var(--pu);color:#fff">QQ</div><div class="nm">Quinn Gabriel Quirubin</div></div>
+    </div>
+    <div class="refs rv" id="refs">
+      <h3 class="hd">References &amp; sources</h3>
+      <p class="n">Full law texts are from the Lawphil Project, a public legal database. Compare with the Official Gazette and government agency sites for the latest provisions. This site is for education and is not legal advice.</p>
+      <ul>
+        <li><a href="https://lawphil.net/statutes/repacts/ra1995/ra_7877_1995.html" target="_blank" rel="noopener">Republic Act No. 7877</a><small>Anti-Sexual Harassment Act of 1995</small></li>
+        <li><a href="https://lawphil.net/statutes/repacts/ra1997/ra_8353_1997.html" target="_blank" rel="noopener">Republic Act No. 8353</a><small>The Anti-Rape Law of 1997</small></li>
+        <li><a href="https://lawphil.net/statutes/repacts/ra2010/ra_9995_2010.html" target="_blank" rel="noopener">Republic Act No. 9995</a><small>Anti-Photo and Video Voyeurism Act of 2009</small></li>
+        <li><a href="https://lawphil.net/statutes/repacts/ra2013/ra_10364_2013.html" target="_blank" rel="noopener">Republic Act No. 10364</a><small>Expanded Anti-Trafficking in Persons Act of 2012</small></li>
+        <li><a href="https://lawphil.net/statutes/repacts/ra2021/ra_11596_2021.html" target="_blank" rel="noopener">Republic Act No. 11596</a><small>Act prohibiting the practice of child marriage</small></li>
+        <li><a href="https://www.officialgazette.gov.ph/" target="_blank" rel="noopener">Official Gazette of the Republic of the Philippines</a><small>Official publication of laws and issuances</small></li>
+        <li><a href="https://pcw.gov.ph/" target="_blank" rel="noopener">Philippine Commission on Women</a><small>Gender equality policy and resources</small></li>
+        <li><a href="https://www.doj.gov.ph/" target="_blank" rel="noopener">Department of Justice</a><small>Legal and prosecution services</small></li>
+        <li><a href="https://pnp.gov.ph/" target="_blank" rel="noopener">Philippine National Police</a><small>Law enforcement and protection services</small></li>
+        <li><a href="https://chr.gov.ph/" target="_blank" rel="noopener">Commission on Human Rights</a><small>Human rights promotion and protection</small></li>
+        <li><a href="https://www.dswd.gov.ph/" target="_blank" rel="noopener">Department of Social Welfare and Development</a><small>Social welfare services</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="hd">PASOK<b> LAHAT!</b></div>
+  <p>Different identities. Equal rights. No one left out.</p>
+  <a href="#home">Back to top &uarr;</a>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+/* nav */
+var nav=document.getElementById('nav'),mb=document.getElementById('mb');
+mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'CLOSE':'MENU';});
+document.querySelectorAll('#nl a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='MENU';});});
+var ids=['home','gender101','voices','knowbetter','change','about'],navA=document.querySelectorAll('#nl a');
+function spy(){var cur=0;ids.forEach(function(id,i){if(document.getElementById(id).getBoundingClientRect().top<200)cur=i;});navA.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+window.addEventListener('scroll',spy,{passive:true});spy();
+/* reveal */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08}):null;
+document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in');});
+/* hero bench */
+var BODY=['#ff6a1a','#5b2bd1','#ffd21f','#ff4fa3','#2d7ff9','#2fb35a','#e0334c'],SKIN=['#ffdcb8','#f2c9a0','#d9a066','#a8693a','#7a4a2a','#5a3420'],HAIR='#2a1a3a';
+var SAY=['May upuan pa para sa’yo.','Usog lang, kasya pa!','Walang pili-pili. Pasok lahat!','Different doesn’t mean less.','Everyone belongs. Everyone matters.','Equality isn’t exclusive.','Mas masaya kapag kumpleto tayo.','Hindi dapat pili-pili ang respeto.'];
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function fig(){
+  var b=pick(BODY),s=pick(SKIN),hh=Math.floor(Math.random()*4),top=56+Math.floor(Math.random()*24),r=13+Math.floor(Math.random()*5),h='';
+  if(hh===1)h='<circle cx="30" cy="'+(top-r-6)+'" r="8" fill="'+HAIR+'"/><circle cx="30" cy="'+top+'" r="'+(r+2)+'" fill="'+HAIR+'"/>';
+  else if(hh===2)h='<path d="M'+(30-r-2)+' '+top+' a'+(r+2)+' '+(r+2)+' 0 0 1 '+(2*r+4)+' 0Z" fill="'+HAIR+'"/>';
+  else if(hh===3)h='<rect x="'+(30-r-3)+'" y="'+(top-r)+'" width="'+(2*r+6)+'" height="'+(r*2+14)+'" rx="'+(r)+'" fill="'+HAIR+'"/>';
+  var d=(Math.random()*2).toFixed(2),
+  svg='<svg viewBox="0 0 60 110" aria-hidden="true" style="animation-delay:0s,'+d+'s">'+h+'<circle cx="30" cy="'+top+'" r="'+r+'" fill="'+s+'" stroke="#1b1233" stroke-width="3"/><path d="M4 110V'+(top+r+14)+'a26 26 0 0 1 52 0V110Z" fill="'+b+'" stroke="#1b1233" stroke-width="3"/></svg>';
+  return svg;
+}
+var seat=document.getElementById('seat'),bsay=document.getElementById('bsay'),sc=0;
+function addSeat(){
+  if(sc>=26){bsay.textContent='Wala nang katapusan. May upuan pa rin para sa lahat!';return;}
+  seat.insertAdjacentHTML('beforeend',fig());sc++;bsay.textContent=pick(SAY);
+}
+for(var q=0;q<5;q++)addSeat();bsay.textContent='May upuan pa para sa’yo.';
+document.getElementById('addSeat').addEventListener('click',addSeat);
+document.getElementById('clrSeat').addEventListener('click',function(){seat.innerHTML='';sc=0;for(var k=0;k<5;k++)addSeat();bsay.textContent='May upuan pa para sa’yo.';});
+/* gender 101 */
+var G=[
+{s:"Sex vs. Gender",t:"Sex vs. Gender",d:"Sex refers to biological characteristics such as chromosomes, hormones, and anatomy. Gender refers to the social and cultural roles, behaviors, and expectations a society links to being a woman, a man, or another gender.",e:"Sex is mostly about biology. Gender is learned and shaped by society, which is why gender expectations change across places and time. Some people are born with sex characteristics that don’t fit typical ideas of male or female.",x:"“Pink is for girls, blue is for boys” is a social rule, not biology. Babies don’t care about color.",k:"Biology is not destiny. Gender is much more than body parts."},
+{s:"Identity & Expression",t:"Gender Identity & Expression",d:"Gender identity is a person’s internal sense of their own gender. Gender expression is how a person presents themselves, through clothing, voice, behavior, or style.",e:"Identity is inside, and expression is outside. The two can match what society expects or not, and neither tells you who someone is attracted to.",x:"Someone can wear a barong, a dress, or jeans and a hoodie. What they wear tells you about their style, not their identity.",k:"Don’t assume. Respect how people describe themselves."},
+{s:"Sexual Orientation",t:"Sexual Orientation",d:"Sexual orientation is a person’s pattern of emotional, romantic, and/or sexual attraction to others.",e:"It is different from gender identity. Examples of orientations include heterosexual (straight), gay, lesbian, bisexual, and asexual. People discover and describe their orientation in their own way.",x:"A classmate who is a gay man and a classmate who is a trans woman are not “the same thing.” One is about attraction, the other about identity.",k:"Who you love and who you are are two different questions."},
+{s:"Gender Roles",t:"Gender Roles & Expectations",d:"Gender roles are the responsibilities and behaviors society expects from people because of their gender.",e:"They influence who is expected to cook, earn, lead, care for children, or stay quiet. These expectations can limit anyone’s choices.",x:"“Ate, ikaw na ang magluto,” while her brother plays games. Chores are assigned by gender, not by who is free.",k:"Roles are assigned by society, so society can change them."},
+{s:"Socialization",t:"Gender Socialization",d:"Gender socialization is the process by which people learn gender expectations from their families, schools, media, communities, and culture.",e:"It begins early, through toys, stories, compliments, jokes, and rules. We absorb these lessons long before we can question them.",x:"A boy is told “Bawal umiyak, lalaki ka” while a girl is told “Umupo ka nang maayos.” Both learn what’s “allowed.”",k:"We learned these rules, so we can unlearn them."},
+{s:"Stereotypes",t:"Gender Stereotypes",d:"Gender stereotypes are oversimplified assumptions about how men and women should look, behave, or what they can become.",e:"They describe a label, not a real person. They are often repeated until they feel like facts.",x:"“Girls aren’t good at math” and “Men can’t be nurturing” are stereotypes. Plenty of people prove them wrong every day.",k:"Judge people by who they are, not by labels."},
+{s:"Prejudice vs. Discrimination",t:"Gender Prejudice & Discrimination",d:"Prejudice is a biased belief or attitude about a group. Discrimination is the unfair treatment that follows from it.",e:"Prejudice lives in thoughts and words. Discrimination shows up in actions and decisions, such as who gets hired, promoted, included, or protected.",x:"Believing women are “too emotional to lead” is prejudice. Never giving a qualified woman the leadership role is discrimination.",k:"Fix the belief before it turns into an action."},
+{s:"Equality vs. Equity",t:"Gender Equality vs. Equity",d:"Equality means giving everyone the same rights and opportunities. Equity means recognizing that people face different barriers and fixing them so everyone can reach fairness.",e:"Equity is a path to equality. Treating everyone exactly the same does not help if some people start with extra obstacles.",x:"Giving everyone size 8 shoes is equal. Giving each person shoes that fit is equitable.",k:"Fair isn’t always identical. Remove the barriers, then everyone can move."},
+{s:"Masculinity & Femininity",t:"Masculinity & Femininity",d:"Masculinity and femininity are sets of traits and behaviors society associates with men and women, such as being strong or caring.",e:"Anyone can show any of these traits. Expectations become harmful when they restrict how people can express themselves.",x:"A man who cries is not “less of a man,” and a woman who leads is not “too much.” They are just being human.",k:"Traits don’t have a gender."},
+{s:"Feminism & Patriarchy",t:"Feminism & Patriarchy",d:"Feminism is a movement that advocates equal rights and opportunities regardless of gender. Patriarchy is a social system in which men have historically held a disproportionate amount of power and authority.",e:"Feminism does not aim to put anyone above others. Patriarchy can also pressure men into rigid roles, like always being the provider or never showing weakness.",x:"A family decides only the sons will finish school because “daughters will marry anyway.” That is patriarchal thinking at work.",k:"Equality is not a competition. Everyone gains when it’s shared."}
+];
+var chips=document.getElementById('chips'),pg=document.getElementById('page'),gi=0;
+function showG(i){
+  gi=i;var d=G[i];
+  chips.querySelectorAll('.chip').forEach(function(c,k){c.classList.toggle('on',k===i);c.setAttribute('aria-selected',k===i);});
+  pg.innerHTML='<div class="anim"><div class="no">'+(i+1<10?'0':'')+(i+1)+'</div><span class="st pk">Topic '+(i+1)+' of '+G.length+'</span><h3 class="hd" style="margin-top:12px">'+d.t+'</h3><div class="blk"><b>Definition</b><p>'+d.d+'</p></div><div class="blk"><b>In plain words</b><p>'+d.e+'</p></div><div class="blk"><b>Relatable example</b><p>'+d.x+'</p></div><div class="take">&#10038; Takeaway: '+d.k+'</div><div class="pn"><button class="btn w" id="gp">&larr; Back</button><button class="btn" id="gn">Next topic &rarr;</button></div></div>';
+  document.getElementById('gp').addEventListener('click',function(){showG((gi+G.length-1)%G.length);});
+  document.getElementById('gn').addEventListener('click',function(){showG((gi+1)%G.length);});
+}
+G.forEach(function(d,i){var b=document.createElement('button');b.className='chip';b.setAttribute('role','tab');b.innerHTML='<small>'+(i+1<10?'0':'')+(i+1)+'</small>'+d.s;b.addEventListener('click',function(){showG(i);});chips.appendChild(b);});
+showG(0);
+/* voices */
+var V=[
+{t:"Women’s Rights",sm:"Equality is not a privilege.",p:"Women have the right to education, healthcare, employment, safety, and equal treatment. These rights protect women from discrimination and abuse.",q:"Equality is not a privilege.",n:"Advocacy principle. Several Philippine laws address women’s rights, and some are featured in the Know Better section."},
+{t:"Women’s Empowerment",sm:"Her voice belongs in every room.",p:"Empowering women means giving them equal access to leadership, education, financial independence, and decision-making.",q:"Her voice belongs in every room.",n:"Advocacy principle. Empowerment is about access and opportunity, not special treatment."},
+{t:"LGBTQIA+ Rights",sm:"Your identity is not up for debate.",p:"LGBTQIA+ rights promote equal protection, freedom of expression, and a safe environment regardless of sexual orientation or gender identity.",q:"Your identity is not up for debate.",n:"Advocacy principle. This describes what the campaign stands for, not a claim about current law. The laws featured on this site do not specifically address all LGBTQIA+ concerns, so check current legislation."},
+{t:"Representation & Visibility",sm:"Visibility matters.",p:"Representation allows women and LGBTQIA+ individuals to be seen and heard in media, politics, education, and leadership.",q:"Representation changes perspectives.",n:"Advocacy principle. When people see themselves in stories and leadership, more people believe they belong there."},
+{t:"Equal Opportunities",sm:"Everyone deserves a seat at the table.",p:"Everyone deserves equal chances in education, employment, and career growth without discrimination based on gender identity.",q:"Everyone deserves a seat at the table.",n:"Advocacy principle. Specific legal protections vary by situation, so check the law that applies."},
+{t:"Rights & Recognition",sm:"Different doesn’t mean less.",p:"Every individual deserves respect, legal protection, and recognition of their identity, regardless of gender or sexual orientation.",q:"Different doesn’t mean less.",n:"Advocacy principle. The extent of legal recognition varies, so this is a goal we advocate for rather than a statement of current law."}
+];
+var vl=document.getElementById('vl');
+V.forEach(function(v,i){
+  var a=document.createElement('article');a.className='vs rv';
+  a.innerHTML='<button class="vb" aria-expanded="false"><span class="n">0'+(i+1)+'</span><span class="t">'+v.t+'<small>'+v.sm+'</small></span><span class="pm">+</span></button><div class="vx"><div><div class="vi"><p>'+v.p+'</p><div class="vq">“'+v.q+'”</div><p class="vn"><b>'+v.n.split('.')[0]+'.</b>'+v.n.slice(v.n.indexOf('.')+1)+'</p></div></div></div>';
+  a.querySelector('.vb').addEventListener('click',function(){var o=a.classList.toggle('open');a.querySelector('.vb').setAttribute('aria-expanded',o);});
+  vl.appendChild(a);io?io.observe(a):a.classList.add('in');
+});
+/* laws */
+var L=[
+{y:1995,ra:"7877",t:"Anti-Sexual Harassment Act of 1995",o:"An Act Declaring Sexual Harassment Unlawful in the Employment, Education or Training Environment, and for Other Purposes",
+ e:"This law makes sexual harassment unlawful in work, education, and training settings. It applies when someone with authority, influence, or moral ascendancy, such as a boss, teacher, professor, coach, or trainer, demands or requires sexual favors from another person.",
+ pr:["Demanding sexual favors as a condition for hiring, promotion, or continued employment","Demanding sexual favors as a condition for a passing grade, honors, scholarship, or other benefits","Requires employers and heads of schools to prevent and deal with sexual harassment"],
+ ex:"A professor hints that a student’s grade will improve if she “spends time” with him after class.",
+ w:"It gave people legal recourse against abuse of power in schools and workplaces.",
+ lim:"It covers work, education, and training settings and focuses on harassment by someone with authority or influence. Other laws, such as the Safe Spaces Act, cover additional situations."},
+{y:1997,ra:"8353",t:"The Anti-Rape Law of 1997",o:"An Act Expanding the Definition of the Crime of Rape, Reclassifying the Same as a Crime Against Persons, Amending for the Purpose Act No. 3815, as Amended, Otherwise Known as the Revised Penal Code, and for Other Purposes",
+ e:"This law changed rape from a “crime against chastity” to a “crime against persons.” It also recognizes rape by sexual assault, which can be committed against a person of any gender, and recognizes that rape can happen within marriage.",
+ pr:["Treats rape as a crime against the person, not against “honor”","Covers rape by sexual assault, whoever the victim is","Recognizes that rape can happen between spouses"],
+ ex:"A survivor of sexual assault learns that the law sees what happened as a violation against her as a person, and that the abuser can be prosecuted.",
+ w:"It shifted the focus from “honor” to the harm done to the survivor.",
+ lim:"It addresses the crime of rape and does not cover every form of harassment or abuse."},
+{y:2010,ra:"9995",t:"Anti-Photo and Video Voyeurism Act of 2009",o:"An Act Defining and Penalizing the Crime of Photo and Video Voyeurism, Prescribing Penalties Therefor, and for Other Purposes",
+ e:"This law punishes recording a person’s sexual act or private areas without consent where they expect privacy. It also prohibits copying, selling, sharing, or publishing such material, even if the person agreed to the recording in the first place.",
+ pr:["Taking photos or videos of sexual acts or private areas without consent","Copying, selling, sharing, or publishing such material","Sharing even if consent was given for the recording, but not for sharing"],
+ ex:"Someone shares an intimate video from a past relationship in a group chat. Agreeing to be recorded did not mean agreeing to be shared.",
+ w:"It protects dignity and privacy in the age of phones and group chats.",
+ lim:"It focuses on sexual acts and private areas under a reasonable expectation of privacy. It does not cover every kind of online harassment or bullying."},
+{y:2013,ra:"10364",t:"Expanded Anti-Trafficking in Persons Act of 2012",o:"An Act Expanding Republic Act No. 9208, the law on trafficking in persons, especially women and children",
+ e:"This law expands the earlier anti-trafficking law. Trafficking involves recruiting, transporting, or holding people through force, fraud, deception, or abuse of power or vulnerability to exploit them, such as for sexual exploitation or forced labor.",
+ pr:["Punishes trafficking in persons and related acts","Provides for the protection and support of trafficked persons","Protects people of any gender, including children"],
+ ex:"A young woman is promised a “job abroad” but is instead held and forced to work. Deception to exploit someone is trafficking.",
+ w:"It recognizes that exploitation often targets people made vulnerable by poverty or limited opportunities.",
+ lim:"It addresses trafficking specifically. It is not a general law on discrimination or harassment."},
+{y:2021,ra:"11596",t:"Prohibition of Child Marriage Law",o:"An Act Prohibiting the Practice of Child Marriage and Imposing Penalties for Violations Thereof",
+ e:"This law prohibits child marriage, which involves a person under 18. It penalizes arranging or facilitating a child marriage and living together with a child as a spouse.",
+ pr:["Bans marriage involving a person under 18","Penalizes those who arrange, facilitate, or officiate such marriages","Penalizes adults who live with a child as a spouse"],
+ ex:"A family plans to marry off their 16-year-old daughter. Under the law, this is prohibited, and the adults involved can be held liable.",
+ w:"It protects children’s right to education, health, and a future of their own choosing.",
+ lim:"It concerns children under 18. It does not regulate marriages between adults."}
+];
+var lt=document.getElementById('lt'),cs=document.getElementById('case');
+function showL(i){
+  var d=L[i];
+  lt.querySelectorAll('button').forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i);});
+  cs.innerHTML='<div class="cl anim"><div><span class="st w">'+d.y+'</span></div><div class="ra">RA<br>'+d.ra+'</div><div class="why"><b>Why it matters</b>'+d.w+'</div></div><div class="cr anim"><span class="st pk">Legal spotlight</span><h4>'+d.t+'</h4><p class="off">'+d.o+'</p><h5>In simple terms</h5><p>'+d.e+'</p><h5>What it protects or prohibits</h5><ul>'+d.pr.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><h5>Relatable example</h5><p><i>'+d.ex+'</i></p><p class="lim"><b>Scope:</b> '+d.lim+'</p><a href="https://lawphil.net/statutes/repacts/ra'+d.y+'/ra_'+d.ra+'_'+d.y+'.html" target="_blank" rel="noopener">Read the full law &rarr;</a></div>';
+}
+L.forEach(function(d,i){var b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML=d.y+'<span>RA '+d.ra+'</span>';b.addEventListener('click',function(){showL(i);});lt.appendChild(b);});
+showL(0);
+/* would you let that slide */
+var S=[
+{h:"STEREOTYPE",q:"A teacher says, “Boys, carry the chairs. Girls, you take care of the decorations.” What is this?",o:[
+ {t:"Harmless tradition",f:"Even when meant lightly, it assigns tasks by gender, not by who is willing or able. Habits like this teach kids what is “for” each gender."},
+ {t:"Gender stereotyping",ok:1,f:"Right. It assumes strength is for boys and neatness is for girls. Letting everyone choose their task is fairer."},
+ {t:"A form of respect",f:"Respect means treating people as individuals. This sorts them by gender instead."}]},
+{h:"ONLINE ABUSE",q:"A group chat shares a classmate’s private, intimate photo without their consent and laughs about it. What is the best response?",o:[
+ {t:"Laugh along, it’s only a chat",f:"Laughing normalizes it and hurts the person in the photo. This is a serious violation of privacy and dignity."},
+ {t:"Don’t share it, tell them to stop, report it, and support the classmate",ok:1,f:"Right. Don’t forward it, speak up if you’re safe doing so, report it to the platform and the proper school authorities, and check on the classmate privately. Sharing intimate images without consent can be a crime under RA 9995."},
+ {t:"Forward it to a few friends to “warn” them",f:"Spreading the image is still sharing it, and that adds to the harm."}]},
+{h:"HARASSMENT",q:"An older student keeps making sexual remarks about a classmate’s body and says, “It’s just a compliment.” What is this?",o:[
+ {t:"Flattery",f:"Unwelcome sexual remarks are not flattery, especially when they’re repeated or make the person uncomfortable."},
+ {t:"Harassment",ok:1,f:"Right. Unwelcome sexual comments are harassment, no matter how the person doing it describes it. The person can report to the appropriate school office."},
+ {t:"A harmless joke",f:"Jokes that leave someone uncomfortable or afraid are not harmless."}]},
+{h:"DISCRIMINATION",q:"In a job interview, an applicant is asked, “Are you planning to get married and have kids soon?” Why is this a problem?",o:[
+ {t:"It isn’t. Employers need to plan ahead.",f:"Hiring decisions should rest on skills and qualifications, not assumptions about someone’s family plans."},
+ {t:"It relies on gender stereotypes and can lead to discriminatory hiring decisions",ok:1,f:"Right. Questions like this assume that women’s family roles will limit their work, which can lead to unequal treatment. Evaluate skills, experience, and fit."},
+ {t:"It’s only a problem if the applicant is a man",f:"Stereotypes affect everyone. Questions about family plans can disadvantage people of any gender."}]},
+{h:"EXCLUSION",q:"Classmates keep calling a student “bakla” as an insult and laugh when the student walks in. What would you do?",o:[
+ {t:"Ignore it. It’s not my problem.",f:"Silence can feel like approval to those mocking and like abandonment to the student."},
+ {t:"Tell them it’s not okay, if it’s safe, check in with the student, and report it if it continues",ok:1,f:"Right. Name-calling that targets identity is harmful. Speak up safely, support the student, and use the appropriate school channels if it continues."},
+ {t:"Join in so I don’t become the next target",f:"Joining in makes the harm worse and tells the student that nobody is on their side."}]}
+];
+(function(){
+  var root=document.getElementById('flow'),i=0,sc=0;
+  function render(){
+    if(i>=S.length){
+      root.innerHTML='<div class="sh"><span>Round complete</span><span>Tapos na!</span></div><div class="sb res"><div class="big">'+sc+'/'+S.length+'</div><p class="sq" style="margin-top:10px">'+(sc===S.length?'Hindi ka nagpapalusot! You spotted every one.':sc>=3?'Ang galing! Review the explanations you missed and keep your eyes open.':'Good start! Try again and read each explanation. Spotting it is step one.')+'</p><button class="btn pk" id="again">Try again</button></div>';
+      document.getElementById('again').addEventListener('click',function(){i=0;sc=0;render();});return;
+    }
+    var d=S[i];
+    root.innerHTML='<div class="sh"><span>Situation '+(i+1)+' of '+S.length+'</span><span>'+d.h+'</span></div><div class="sb anim"><p class="sq">'+d.q+'</p><div class="so">'+d.o.map(function(o,k){return '<button class="op" data-k="'+k+'">'+o.t+'</button>';}).join('')+'</div><div id="fx"></div></div>';
+    root.querySelectorAll('.op').forEach(function(b){b.addEventListener('click',function(){
+      var o=d.o[+b.getAttribute('data-k')];
+      root.querySelectorAll('.op').forEach(function(x,n){x.disabled=true;if(d.o[n].ok)x.classList.add('ok');});
+      if(!o.ok)b.classList.add('no'); else sc++;
+      document.getElementById('fx').innerHTML='<div class="ex '+(o.ok?'g':'r')+'"><b>'+(o.ok?'Hindi palulusot!':'That one slides. Not quite.')+'</b>'+o.f+'</div><button class="btn nx" id="nxt">'+(i===S.length-1?'See my result':'Next')+'</button>';
+      document.getElementById('nxt').addEventListener('click',function(){i++;render();});
+    });});
+  }
+  render();
+})();
+/* your move */
+var mvb=document.querySelectorAll('.mvb'),go=document.getElementById('go'),mres=document.getElementById('mres');
+function upd(){var n=document.querySelectorAll('.mvb[aria-pressed=true]').length;document.getElementById('mc').textContent=n+' chosen';go.disabled=n===0;}
+mvb.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');upd();});});
+go.addEventListener('click',function(){
+  var sel=[].slice.call(document.querySelectorAll('.mvb[aria-pressed=true]')).map(function(b){return b.textContent.replace('\u2713','').trim();}),n=sel.length;
+  document.getElementById('tier').textContent=n>=6?'Champion ally':n>=3?'Rising ally':'Starter ally';
+  document.getElementById('ml').innerHTML=sel.map(function(t){return '<li>'+t+'</li>';}).join('');
+  document.getElementById('mp').textContent='My move: '+sel.join(' ')+' Pasok lahat! #PasokLahat';
+  mres.classList.add('show');mres.scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('cp').addEventListener('click',function(){
+  var b=this,t=document.getElementById('mp').textContent;
+  function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy my move';},1800);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){b.textContent='Select and copy the text above';});}
+  else{var r=document.createRange();r.selectNodeContents(document.getElementById('mp'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Text selected. Press Ctrl+C';}
+});
+document.getElementById('rs').addEventListener('click',function(){mvb.forEach(function(b){b.setAttribute('aria-pressed','false');});upd();mres.classList.remove('show');});
+</script>
+</body>
+</html>
